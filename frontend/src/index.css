@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* Scan workflow-visualizer source for Tailwind classes */
+@source "../node_modules/workflow-visualizer/src/**/*.{ts,tsx}";
+
+:root {
+  --accent: #ffffff;
+  --error: #ff3333;
+  --warning: #ffaa00;
+  --success: #00ff88;
+}
+
+* {
+  border-radius: 0 !important;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+input, button {
+  font-family: inherit;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}

@@ -1,0 +1,13 @@
+# Render Workflows SDK
+render-sdk>=0.2.0
+
+# Environment
+python-dotenv>=1.0.0
+
+# HTTP client (async support with SSRF protection)
+httpx>=0.27.0
+safehttpx>=0.1.7
+
+# HTML parsing
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
