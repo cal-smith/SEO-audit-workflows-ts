@@ -31,7 +31,6 @@ logger.setLevel(logging.INFO)
 app = Workflows(
     default_retry=Retry(max_retries=2, wait_duration_ms=1000, backoff_scaling=1.5),
     default_timeout=300,
-    auto_start=True,
 )
 
 
@@ -191,6 +190,3 @@ async def analyze_page(page_url: str) -> dict[str, Any]:
         "load_time_ms": load_time,
         "content_length": content_length,
     }
-
-
-# No explicit start() needed - auto_start=True handles it
