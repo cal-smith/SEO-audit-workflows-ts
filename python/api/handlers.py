@@ -34,15 +34,19 @@ def start_audit():
 
     try:
         render = get_render_client()
-        result = run_async(
-            render.workflows.run_task(
+
+        async def run_task_and_wait():
+            task_run = await render.workflows.run_task(
                 f"{workflow_slug}/audit_site",
                 [validated_url, max_pages, max_concurrency],
             )
-        )
+            result = await task_run
+            return task_run, result
+
+        task_run, result = run_async(run_task_and_wait())
 
         return jsonify({
-            "task_run_id": result.id,
+            "task_run_id": task_run.id,
             "status": result.status,
             "results": getattr(result, "results", None),
         })
