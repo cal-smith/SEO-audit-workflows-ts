@@ -19,7 +19,7 @@ services:
           type: web
           property: host
       - key: NODE_VERSION
-        value: "20"
+        value: "22"
     routes:
       - type: rewrite
         source: /*
@@ -41,7 +41,7 @@ services:
       - key: WORKFLOW_ID
         sync: false
       - key: NODE_VERSION
-        value: "20"
+        value: "22"
 
   # ─────────────────────────────────────────────────────────────────────────────
   # ALTERNATIVE: Python API (uncomment below and comment out TypeScript above)
